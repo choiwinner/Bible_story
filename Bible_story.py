@@ -186,8 +186,8 @@ def make_image(response,summary):
     # API 키 설정
     client = genai.Client(api_key=st.session_state.gemini_api_key)
 
-    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp-image-generation", temperature=0.3)
-    #llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-preview-image-generation", temperature=0.3)
+    #llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-exp-image-generation", temperature=0.3)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-preview-image-generation", temperature=0.3)
 
     prompt_template = PromptTemplate(
         template="""
