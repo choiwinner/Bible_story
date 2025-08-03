@@ -103,8 +103,10 @@ def make_story(response,name="크리스"):
    
     #llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-thinking-exp-01-21", temperature=0)
     #llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-thinking-exp", temperature=0)
+    #llm = ChatGoogleGenerativeAI(
+        #model="gemini-2.5-flash-preview-04-17-thinking", temperature=0.5)
     llm = ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash-preview-04-17-thinking", temperature=0.5)
+        model="gemini-2.5-flash", temperature=0.5)
 
     template = """"당신은 세계 최고의 애니메이션 동화책 작가입니다.
     Context를 기반으로 이야기를 만들고 다음 규칙을 지켜서 작성해야 합니다.
