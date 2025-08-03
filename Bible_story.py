@@ -45,7 +45,8 @@ def get_conversation_chain(vectorstore,data_list,query,st_memory):
    
     #llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-thinking-exp-01-21", temperature=0)
     #llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash-thinking-exp", temperature=0)
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-preview-05-20", temperature=0)
+    #llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-preview-05-20", temperature=0)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0)
 
     template = """당신은 인공지능 ChatBOT으로 Question 내용에 대해서 대답합니다.
     Context에 있는 내용을 참조해서만 대답합니다.
@@ -282,7 +283,8 @@ def make_image3(response,summary):
     # API 키 설정
     client = genai.Client(api_key=st.session_state.gemini_api_key)
 
-    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-preview-05-20", temperature=0.3)
+    #llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-preview-05-20", temperature=0.3)
+    llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
 
     prompt_template = PromptTemplate(
         template="""
@@ -534,7 +536,7 @@ def text_to_speech3(text):
 
     # 감정이 담긴 한국어 프롬프트
     for index,text in enumerate(text_list):
-        emotional_prompt = f"""다음은 어린이 성경 동화입니다. 실감나게 말해 주세요.:
+        emotional_prompt = f"""다음은 어린이 성경 동화입니다. 생동감 있게 말해 주세요.:
         {text}"""
         response = client.models.generate_content(
             model="gemini-2.5-flash-preview-tts",
