@@ -3,7 +3,7 @@
 import streamlit as st
 
 from langchain_core.runnables import RunnableMap
-from langchain.retrievers.multi_query import MultiQueryRetriever
+from langchain.retrievers import MultiQueryRetriever
 
 #import google.generativeai as genai
 from langchain.text_splitter import RecursiveCharacterTextSplitter
