@@ -2,13 +2,13 @@
 #실행 streamlit run Lagnchain_with_bible_250329.py --server.address=0.0.0.0 --server.port=8501
 import streamlit as st
 
-from langchain.schema.runnable import RunnableMap
+from langchain_core.runnables import RunnableMap
 from langchain.retrievers.multi_query import MultiQueryRetriever
 
 #import google.generativeai as genai
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 from langchain_community.document_loaders import TextLoader
 from langchain_core.prompts import PromptTemplate
@@ -285,6 +285,7 @@ def make_image3(response,summary):
 
     #llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash-preview-05-20", temperature=0.3)
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0.3)
+    
 
     prompt_template = PromptTemplate(
         template="""
